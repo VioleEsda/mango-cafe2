@@ -37,21 +37,20 @@
   text-align: center;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  outline: none;
-  border: none;
-  white-space: nowrap;
-  font-size: 1rem;
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
+/* Mengubah warna pagination menjadi hitam */
+.swiper-pagination-bullet {
+  background: black !important;
 }
 
-.btn:hover {
-  background-color: var(--primary-color-dark);
+/* Mengubah posisi pagination lebih ke bawah */
+.swiper-pagination {
+  bottom: 150px !important; /* Sesuaikan nilai ini untuk mengatur posisi vertikal */
+}
+
+/* Mengubah warna panah navigasi menjadi hitam */
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
 }
 
 .logo a {
@@ -663,4 +662,153 @@ nav {
   .chef__bg {
     max-width: 375px;
   }
+}
+
+.shopping__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.shopping__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shopping__card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.shopping__card img {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.shopping__details {
+  flex: 1;
+}
+
+.shopping__details h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.shopping__details .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var (--text-dark);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.quantity-controls .btn {
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-controls .btn:hover {
+  background-color: #e67e22;
+}
+
+.quantity-controls .quantity {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.total-price {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.total-price h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  background-color: #f39c12;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.btn:hover {
+  background-color: #e67e22;
+}
+
+.contact__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.5rem;
+  background-color: var(--primary-color-light);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contact__form.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form__group input,
+.form__group textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  transition: border-color 0.3s ease;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  border-color: var(--primary-color-dark);
+}
+
+.form__group textarea {
+  resize: vertical;
 }

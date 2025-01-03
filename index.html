@@ -13,6 +13,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>MangoCafe</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
     <nav>
@@ -26,45 +28,45 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#home">Home</a></li>
+        <li><a href="menu.php">Menu</a></li>
         <li><a href="#special">Special</a></li>
         <li><a href="#chef">Chef</a></li>
         <li><a href="#client">Clients</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="menu.php">Menu</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav__btn">
-        <button class="btn"><i class="ri-shopping-bag-fill"></i></button>
+        <button class="btn" onclick="window.location.href='shopping_bag.php'"><i class="ri-shopping-bag-fill"></i></button>
       </div>
     </nav>
     <header class="section__container header__container" id="home">
       <div class="header__image">
-        <img src="assets/header.png" alt="header" />
+        <img src="assets/header2.jpg" alt="header" />
       </div>
       <div class="header__content">
-        <h1>Meet, Eat & Enjoy The <span>True Taste</span>.</h1>
+        <h1>Segarnya Tropis & <span>Lezatnya Hidangan</span>.</h1>
         <p class="section__description">
-          Discover the true essence of culinary delight as you meet, eat, and
-          savor the authentic flavors that define our passion for food.
+          Temukan esensi sesungguhnya dari kenikmatan kuliner saat Anda bertemu, bersantap, 
+          dan menikmati cita rasa autentik yang mencerminkan kecintaan kami terhadap makanan.
         </p>
         <div class="header__btn">
-          <button class="btn">Get Started</button>
+          <button class="btn" id="get-started-btn">Get Started</button>
         </div>
       </div>
     </header>
 
     <section class="section__container special__container" id="special">
-      <h2 class="section__header">Our Special Dish</h2>
+      <h2 class="section__header">Hidangan Spesial Kami</h2>
       <p class="section__description">
-        Each dish promises an unforgettable dining experience, blending
-        innovation with tradition to delight your senses.
+        Setiap hidangan menghadirkan perpaduan inovasi dan tradisi, 
+        menciptakan pengalaman bersantap yang tak terlupakan.
       </p>
       <div class="special__grid">
         <div class="special__card">
-          <img src="assets/special-1.png" alt="special" />
-          <h4>Chicken Veg Curry</h4>
+          <img src="assets/food1.png" alt="special" />
+          <h4>Nasi Beef Teriyaki</h4>
           <p>
-            Diced chicken simmered in aromatic curry sauce with mixed veggies
-            like potatoes, cauliflower, and beans for a hearty, flavorful dish.
+            Daging sapi lembut dengan saus teriyaki gurih, disajikan bersama 
+            nasi hangat untuk menciptakan kenikmatan yang tak terlupakan.
           </p>
           <div class="special__ratings">
             <span><i class="ri-star-fill"></i></span>
@@ -74,16 +76,22 @@
             <span><i class="ri-star-fill"></i></span>
           </div>
           <div class="special__footer">
-            <p class="price">$12.50</p>
-            <button class="btn">Add to Cart</button>
+            <p class="price">Rp22000</p>
+            <form method="POST" action="add_to_cart.php">
+              <input type="hidden" name="item_id" value="1">
+              <input type="hidden" name="name" value="Nasi Beef Teriyaki">
+              <input type="hidden" name="price" value="22000">
+              <input type="hidden" name="image" value="assets/food1.png">
+              <button type="submit" name="add_to_cart" class="btn">Add to Cart</button>
+            </form>
           </div>
         </div>
         <div class="special__card">
-          <img src="assets/special-2.png" alt="special" />
-          <h4>Chicken Veg Stir-Fry</h4>
+          <img src="assets/food6.png" alt="special" />
+          <h4>Nasi Ayam Lada Garam</h4>
           <p>
-            Tender chicken strips wok-tossed with a colorful array of fresh
-            vegetables in a flavorful blend of spices and sauces.
+            Ayam renyah ditumis dengan lada garam dan cabai, 
+            disajikan dengan nasi hangat yang menggugah selera dan memanjakan lidah.
           </p>
           <div class="special__ratings">
             <span><i class="ri-star-fill"></i></span>
@@ -93,17 +101,22 @@
             <span><i class="ri-star-fill"></i></span>
           </div>
           <div class="special__footer">
-            <p class="price">$18.50</p>
-            <button class="btn">Add to Cart</button>
+            <p class="price">Rp16000</p>
+            <form method="POST" action="add_to_cart.php">
+              <input type="hidden" name="item_id" value="2">
+              <input type="hidden" name="name" value="Nasi Ayam Lada Garam">
+              <input type="hidden" name="price" value="16000">
+              <input type="hidden" name="image" value="assets/food6.png">
+              <button type="submit" name="add_to_cart" class="btn">Add to Cart</button>
+            </form>
           </div>
         </div>
         <div class="special__card">
-          <img src="assets/special-3.png" alt="special" />
-          <h4>Chicken Veg Pasta</h4>
+          <img src="assets/food8.png" alt="special" />
+          <h4>Nasi Goreng Sosis</h4>
           <p>
-            Al dente pasta tossed with chicken strips and a mix of vibrant
-            vegetables in a creamy garlic herb sauce, offering a delightful
-            pasta experience.
+            Nasi goreng spesial dengan sosis, telur, dan sayuran segar, 
+            disajikan dengan kerupuk gurih yang menambah kenikmatan santapan.
           </p>
           <div class="special__ratings">
             <span><i class="ri-star-fill"></i></span>
@@ -113,8 +126,14 @@
             <span><i class="ri-star-fill"></i></span>
           </div>
           <div class="special__footer">
-            <p class="price">$15.50</p>
-            <button class="btn">Add to Cart</button>
+            <p class="price">Rp15000</p>
+            <form method="POST" action="add_to_cart.php">
+              <input type="hidden" name="item_id" value="3">
+              <input type="hidden" name="name" value="Nasi Goreng Sosis">
+              <input type="hidden" name="price" value="15000">
+              <input type="hidden" name="image" value="assets/food8.png">
+              <button type="submit" name="add_to_cart" class="btn">Add to Cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -122,14 +141,14 @@
 
     <section class="section__container explore__container">
       <div class="explore__image">
-        <img src="assets/explore.png" alt="explore" />
+        <img src="assets/explore2.png" alt="explore" />
       </div>
       <div class="explore__content">
-        <h1 class="section__header">We Serve Healthy & Tasty Food</h1>
+        <h1 class="section__header">Kami Menyajikan Makanan Sehat & Lezat</h1>
         <p class="section__description">
-          Indulge guilt-free with our commitment to serving wholesome and
-          delicious meals. Explore a menu curated to balance taste and
-          nutrition, ensuring every bite is both satisfying and nourishing.
+          Nikmati hidangan tanpa rasa khawatir dengan komitmen kami untuk menyajikan 
+          makanan yang sehat dan lezat. Jelajahi menu yang dirancang untuk menyeimbangkan 
+          rasa dan gizi, memastikan setiap gigitan memuaskan sekaligus bergizi.
         </p>
         <div class="explore__btn">
           <button class="btn">
@@ -142,11 +161,11 @@
     <section class="section__container banner__container">
       <div class="banner__card">
         <span class="banner__icon"><i class="ri-bowl-fill"></i></span>
-        <h4>Order Your Food</h4>
+        <h4>Order Makanan</h4>
         <p>
-          Seamlessly place your food orders online with just a few clicks. Enjoy
-          convenience and efficiency as you select from our diverse menu of
-          delectable dishes.
+          Pesan makanan dengan mudah melalui GoFood atau 
+          ShopeeFood hanya dengan beberapa klik. Temukan pilihan 
+          hidangan istimewa yang Anda inginkan.
         </p>
         <a href="#">
           Read more
@@ -155,11 +174,11 @@
       </div>
       <div class="banner__card">
         <span class="banner__icon"><i class="ri-truck-fill"></i></span>
-        <h4>Pick Your Food</h4>
+        <h4>Pesanan Diantar</h4>
         <p>
-          Customize your dining experience by choosing from a tantalizing array
-          of options. For savory, sweet, or in between craving, find the perfect
-          meal to satisfy your appetite.
+          Nikmati kenyamanan dengan layanan antar langsung 
+          ke lokasi Anda. Pesanan Anda akan tiba dengan cepat 
+          dan tetap dalam kondisi terbaik.
         </p>
         <a href="#">
           Read more
@@ -168,11 +187,10 @@
       </div>
       <div class="banner__card">
         <span class="banner__icon"><i class="ri-star-smile-fill"></i></span>
-        <h4>Enjoy Your Food</h4>
+        <h4>Beri Ulasan</h4>
         <p>
-          Sit back, relax, and savor the flavors as your meticulously prepared
-          meal arrives. Delight in the deliciousness of every bite, knowing that
-          your satisfaction is our top priority.
+          Berikan ulasan Anda dan bantu kami untuk terus menyajikan yang terbaik. 
+          Kami menghargai setiap masukan Anda untuk pengalaman yang lebih baik di masa depan.
         </p>
         <a href="#">
           Read more
@@ -185,28 +203,27 @@
       <img src="assets/topping.png" alt="topping" class="chef__bg" />
       <div class="section__container chef__container">
         <div class="chef__image">
-          <img src="assets/chef.png" alt="chef" />
+          <img src="assets/chef2.png" alt="chef" />
         </div>
         <div class="chef__content">
-          <h2 class="section__header">Cooked By The Best Chefs In The World</h2>
+          <h2 class="section__header">Dimasak Oleh Karyawan Terbaik</h2>
           <p class="section__description">
-            Experience culinary excellence crafted by master chefs from around
-            the globe. Our team of culinary virtuosos brings together expertise,
-            innovation, and passion to create unforgettable dining experiences
-            that redefine gastronomy.
+            Rasakan keunggulan kuliner yang diracik oleh chef berkelas. 
+            Tim ahli kami memadukan keahlian, inovasi, dan dedikasi untuk menciptakan 
+            pengalaman bersantap yang tak terlupakan dan mendefinisikan ulang seni gastronomi.
           </p>
           <ul class="chef__list">
             <li>
               <span><i class="ri-checkbox-fill"></i></span>
-              Savour culinary brilliance from master chefs worldwide.
+              Nikmati kecemerlangan kuliner dari chef yang handal.
             </li>
             <li>
               <span><i class="ri-checkbox-fill"></i></span>
-              Experience innovative creations with attention to detail.
+              Rasakan kreasi inovatif dengan perhatian terhadap detail.
             </li>
             <li>
               <span><i class="ri-checkbox-fill"></i></span>
-              Enjoy dishes crafted with an unwavering passion for perfection.
+              Nikmati hidangan yang dibuat dengan semangat.
             </li>
           </ul>
         </div>
@@ -214,58 +231,59 @@
     </section>
 
     <section class="section__container client__container" id="client">
-      <h2 class="section__header">What Our Customers Are Saying</h2>
+      <h2 class="section__header">Apa kata Kostumer Kami ?</h2>
       <p class="section__description">
-        Discover firsthand experiences and testimonials from our valued patrons.
-        Explore the feedback and reviews that showcase our commitment to
-        quality, service, and customer satisfaction.
+          Dengarkan langsung dari pelanggan kami! Temukan 
+          pengalaman mereka menikmati hidangan kami dan 
+          bagaimana layanan kami memberikan kepuasan. 
+          Ulasan mereka menjadi inspirasi kami untuk 
+          terus memberikan yang terbaik.
       </p>
       <div class="client__swiper">
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="client__card">
-                <p>
-                  FoodMan's culinary expertise never fails to impress! Every
-                  dish is a masterpiece, bursting with flavor and freshness.
-                </p>
-                <img src="assets/client-1.jpg" alt="client" />
-                <h4>David Lee</h4>
-                <h5>Business Executive</h5>
+          <!-- Slider main container -->
+          <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                      <div class="client__card">
+                          <p>
+                              "Nasi Gorengnya enak, recommend banget, apalagi tempatnya dekat dengan Telkom university."
+                          </p>
+                          <img src="assets/testi1.JPG" alt="client" />
+                          <h4>Haykal Rizqi</h4>
+                          <h5>Mahasiswa</h5>
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <div class="client__card">
+                          <p>
+                            "Makanan disini Enak banget lho, SERIUSAN! Looks nya bikin Ngiler Semua deh... MangoFloat nya The Best sih."
+                          </p>
+                          <img src="assets/testi2.jpg" alt="client" />
+                          <h4>Irvan Ramadhan</h4>
+                          <h5>Mahasiswa</h5>
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <div class="client__card">
+                          <p>
+                              "Kayanya ga ada makanan yang gaenak disini, kalo ga percaya cobain aja pesen semua menu satu-satu."
+                          </p>
+                          <img src="assets/testi3.jpg" alt="client" />
+                          <h4>Riyanti Nufus</h4>
+                          <h5>Mahasiswa</h5>
+                      </div>
+                  </div>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <p>
-                  I always turn to FoodMan for a quick and delicious meal. Their
-                  efficient service and mouthwatering options never disappoint!
-                </p>
-                <img src="assets/client-2.jpg" alt="client" />
-                <h4>Emily Johnson</h4>
-                <h5>Food Blogger</h5>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="client__card">
-                <p>
-                  FoodMan has become my go-to for all my catering needs. Their
-                  attention to detail and exceptional customer service make
-                  every event a success.
-                </p>
-                <img src="assets/client-3.jpg" alt="client" />
-                <h4>Michael Thompson</h4>
-                <h5>Event Planner</h5>
-              </div>
-            </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
       </div>
-    </section>
+  </section>
 
     <footer class="footer" id="contact">
       <div class="section__container footer__container">
@@ -274,27 +292,25 @@
             <a href="#">Mango<span>Cafe</span></a>
           </div>
           <p class="section__description">
-            Embark on a gastronomic journey with FoodMan, where every bite tells
-            a story and every dish is crafted to perfection.
+            Mulailah perjalanan gastronomi bersama MangoCafe, 
+            di mana setiap gigitan menceritakan sebuah kisah dan 
+            setiap hidangan dibuat dengan sempurna.
           </p>
         </div>
         <div class="footer__col">
           <h4>Product</h4>
           <ul class="footer__links">
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Specials</a></li>
+            <li><a href="menu.php">Menu</a></li>
+            <li><a href="#special">Specials</a></li>
             <li><a href="#">Meal Deals</a></li>
-            <li><a href="#">Catering Options</a></li>
-            <li><a href="#">Seasonal Offerings</a></li>
+            <li><a href="#">Opsi Catering</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4>Information</h4>
           <ul class="footer__links">
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Nutrition Information</a></li>
-            <li><a href="#">Allergen Information</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -308,7 +324,7 @@
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2024 Web Design Mastery. All rights reserved.
+        Copyright © 2024 MangoCafe. All rights reserved.
       </div>
     </footer>
 

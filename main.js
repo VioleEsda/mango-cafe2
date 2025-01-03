@@ -54,3 +54,51 @@ if (typeof Swiper !== 'undefined') {
 } else {
   console.error('Swiper is not defined');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Inisialisasi Swiper
+  var swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  // Event listener untuk tombol "Get Started"
+  var getStartedBtn = document.getElementById('get-started-btn');
+  if (getStartedBtn) {
+    getStartedBtn.addEventListener('click', function() {
+      document.getElementById('special').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Event listener untuk tombol "Add to Cart"
+  var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      console.log('Add to Cart button clicked'); // Debugging
+      var form = button.closest('form');
+      var formData = new FormData(form);
+
+      // Simulate adding to cart
+      fetch('menu.php', {
+        method: 'POST',
+        body: formData
+      }).then(function(response) {
+        return response.text();
+      }).then(function(data) {
+        console.log('Item added to cart'); // Debugging
+      });
+    });
+  });
+});
